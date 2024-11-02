@@ -1,5 +1,6 @@
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
+        # reference: https://youtu.be/5bS636lE_R0
         total_len = len(nums)
         answer = [1]*total_len
         for idx in range(1, total_len):
