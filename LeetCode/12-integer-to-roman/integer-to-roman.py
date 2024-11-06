@@ -15,17 +15,14 @@ class Solution:
             900:    'CM',
             1000:    'M'
         }
-        converted_list = []
-        decimal_cnt = 0
-        for dec in range(4):
-            num, remainder = divmod(num, 10)
-            if remainder*(10**dec) in roman:
-                converted_list.append(roman[remainder*(10**dec)])
-            elif remainder < 5:
-                converted_list.append(roman[(10**dec)]*remainder)
+        integer = list(roman.keys())
+        integer.sort(reverse=True)        
+        result = ''
+        i = 0
+        while num:
+            if integer[i] <= num:
+                result += roman[integer[i]]
+                num -= integer[i]
             else:
-                converted_list.append(roman[(10**dec)*5]+roman[(10**dec)]*(remainder-5))
-            if num<1:
-                break
-        converted_list.reverse()
-        return "".join(converted_list)
+                i += 1
+        return result
