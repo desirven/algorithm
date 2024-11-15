@@ -3,6 +3,8 @@ class Solution:
         answer = []
         nums.sort()
         for i in range(len(nums)-2):
+            if nums[i]>0:
+                break   # 가장 작은 수가 양수면 이후도 다 양수
             if i>0 and nums[i]==nums[i-1]:
                 continue
             l, r = i+1, len(nums)-1
