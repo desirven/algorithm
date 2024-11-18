@@ -8,5 +8,5 @@ string solution(vector<string> arr) {
     for(auto c:arr){
         answer += c;
     }
-    return answer;
+    return answer; 
 }
