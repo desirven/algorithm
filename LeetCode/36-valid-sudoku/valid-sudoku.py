@@ -1,4 +1,3 @@
-from collections import Counter
 class Solution:
     def isValidSudoku(self, board: List[List[str]]) -> bool:
         row_cnt = [set() for _ in range(9)]
