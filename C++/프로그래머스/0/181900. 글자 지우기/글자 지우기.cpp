@@ -6,7 +6,9 @@ using namespace std;
 
 string solution(string my_string, vector<int> indices) {
     string answer = "";
-    for (int i=0; i<my_string.size(); i++)
-        if(find(indices.begin(), indices.end(), i) == indices.end()) answer += my_string[i];
+    for (const auto i:indices)
+        my_string[i] = '_';
+    for (const auto c:my_string)
+        if (c != '_') answer += c;
     return answer;
 }
