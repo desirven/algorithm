@@ -24,4 +24,4 @@ class Solution:
             prev.next = then
             then = start.next
         
-        return dummy.next
+        return dummy.next 
